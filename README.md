@@ -9,7 +9,7 @@ Easy to use UI components for angular: [Angular Material](https://material.angul
 
     cd assignment 1
 
-    ng open --serve
+    ng serve --open
 
     Page is running on localhost:XXXX in yout browser (specified in the terminal)
 
