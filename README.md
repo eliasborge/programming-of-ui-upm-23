@@ -1,13 +1,12 @@
 Repository for programming of user interfaces fall 2023
 
-Easy to use UI components for angular: [Angular Material](https://material.angular.io/)
 
 # Running Angular
     Install node and NPM 
 
     Install angular 
 
-    cd EmailReader
+    cd into the app you want to run
 
     ng serve --open
 
