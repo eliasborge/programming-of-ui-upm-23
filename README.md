@@ -7,7 +7,7 @@ Easy to use UI components for angular: [Angular Material](https://material.angul
 
     Install angular 
 
-    cd assignment 1
+    cd EmailReader
 
     ng serve --open
 
