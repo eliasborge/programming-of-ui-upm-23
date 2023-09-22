@@ -4,17 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { EmailReaderBasicModule } from './email-reader-basic/email-reader-basic.module';
-import { EmailFormComponent } from './email-reader-basic/email-form/email-form.component';
+
+import { EmailFormComponent } from './email-reader-form/email-form/email-form.component';
 
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmailReaderFormModule } from './email-reader-form/email-reader-form.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmailFormComponent,
+    EmailFormComponent
   
   
   ],
@@ -22,8 +23,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    EmailReaderBasicModule,
-    FormsModule
+    EmailReaderFormModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
