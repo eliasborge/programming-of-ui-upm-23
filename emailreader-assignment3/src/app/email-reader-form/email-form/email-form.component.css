@@ -1,0 +1,17 @@
+
+  
+  
+.valid-input {
+    border: 2px solid green;
+    background-color:#FFFFFF;
+  }
+
+  .invalid-input {
+    border: 2px solid red;
+    background-color:#ffcccb;
+  }
+  
+
+  .focus-input {
+    background-color: lightblue;
+  }
