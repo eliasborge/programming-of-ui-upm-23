@@ -1,0 +1,97 @@
+
+
+<div class="container mt-4">
+    <form (ngSubmit)="onSubmit()" [formGroup]="emailForm" class="needs-validation" novalidate>
+   
+<div class="form-group">
+    <label for="from">From</label>
+    <input
+      type="email"
+      id="from"
+      formControlName="from"
+      appFieldFocus
+      class="form-control"
+      [ngClass]="{
+        'valid-input': emailForm.get('from')?.valid,
+        'invalid-input': emailForm.get('from')?.invalid && emailForm.get('from')?.touched,
+        'is-invalid': emailForm.get('from')?.invalid && emailForm.get('from')?.touched
+      }"
+      required
+    />
+    <div *ngIf="emailForm.get('from')?.hasError('required') && emailForm.get('from')?.touched" class="invalid-feedback">
+      From is required.
+    </div>
+    <div *ngIf="emailForm.get('from')?.hasError('email') && emailForm.get('from')?.touched" class="invalid-feedback">
+      Invalid email format.
+    </div>
+  </div>
+  
+
+  <div class="form-group">
+    <label for="to">To</label>
+    <input
+      type="email"
+      id="to"
+      formControlName="to"
+      appFieldFocus
+      class="form-control"
+      [ngClass]="{
+        'valid-input': emailForm.get('to')?.valid,
+        'invalid-input': emailForm.get('to')?.invalid && emailForm.get('to')?.touched,
+        'is-invalid': emailForm.get('to')?.invalid && emailForm.get('to')?.touched
+      }"
+      required
+    />
+    <div *ngIf="emailForm.get('to')?.hasError('required') && emailForm.get('to')?.touched" class="invalid-feedback">
+      To is required.
+    </div>
+    <div *ngIf="emailForm.get('to')?.hasError('email') && emailForm.get('to')?.touched" class="invalid-feedback">
+      Invalid email format.
+    </div>
+  </div>
+  
+
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input
+      type="text"
+      id="subject"
+      formControlName="subject"
+      appFieldFocus
+      class="form-control"
+      [ngClass]="{
+        'valid-input': emailForm.get('subject')?.valid,
+        'invalid-input': emailForm.get('subject')?.invalid && emailForm.get('subject')?.touched,
+        'is-invalid': emailForm.get('subject')?.invalid && emailForm.get('subject')?.touched
+      }"
+      required
+    />
+    <div *ngIf="emailForm.get('subject')?.hasError('required') && emailForm.get('subject')?.touched" class="invalid-feedback">
+      Subject is required.
+    </div>
+    <div *ngIf="emailForm.get('subject')?.hasError('minlength') && emailForm.get('subject')?.touched" class="invalid-feedback">
+      Minimum 10 characters required.
+    </div>
+    <div *ngIf="emailForm.get('subject')?.hasError('maxlength') && emailForm.get('subject')?.touched" class="invalid-feedback">
+      Maximum 50 characters allowed.
+    </div>
+  </div>
+  
+  
+   
+      <div class="form-group">
+        <label for="body">Body</label>
+        <textarea
+          id="body"
+          formControlName="body"
+          appFieldFocus
+          class="form-control"
+        ></textarea>
+      </div>
+  
+      <button type="submit" [disabled]="emailForm.invalid" class="btn btn-primary">Send</button>
+      <button type="button" (click)="resetForm()" class="btn btn-secondary ml-2">Reset</button>
+      <button type="button" (click)="routeBack()" class="btn btn-info ml-2">Go back</button>
+    </form>
+
+</div>
